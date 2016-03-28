@@ -42,6 +42,7 @@
 #include "Sample_SoloMesh.h"
 #include "Sample_TileMesh.h"
 #include "Sample_TempObstacles.h"
+#include "Sample_UnityNavMesh.h"
 #include "Sample_Debug.h"
 
 #ifdef WIN32
@@ -60,12 +61,14 @@ struct SampleItem
 Sample* createSolo() { return new Sample_SoloMesh(); }
 Sample* createTile() { return new Sample_TileMesh(); }
 Sample* createTempObstacle() { return new Sample_TempObstacles(); }
+Sample* createUnityNavMesh() { return new Sample_UnityNavMesh(); }
 Sample* createDebug() { return new Sample_Debug(); }
 static SampleItem g_samples[] =
 {
 	{ createSolo, "Solo Mesh" },
 	{ createTile, "Tile Mesh" },
 	{ createTempObstacle, "Temp Obstacles" },
+	{ createUnityNavMesh, "Unity NavMesh" },
 };
 static const int g_nsamples = sizeof(g_samples) / sizeof(SampleItem);
 

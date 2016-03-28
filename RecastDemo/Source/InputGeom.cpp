@@ -222,7 +222,9 @@ bool InputGeom::loadGeomSet(rcContext* ctx, const std::string& filepath)
 				name++;
 			if (*name)
 			{
-				if (!loadMesh(ctx, name))
+				size_t pos = filepath.rfind("/");
+				std::string objpath = filepath.substr(0, pos+1) + name;
+				if (!loadMesh(ctx, objpath))
 				{
 					delete [] buf;
 					return false;
